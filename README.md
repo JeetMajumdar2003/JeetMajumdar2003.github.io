@@ -1,49 +1,17 @@
-<<<<<<< HEAD
-# Jeet's personal portfolio using HTML CSS and Tailwind CSS.
-<!-- add my website into github pages -->
+<!DOCTYPE html>
+<html lang="en">
 
-## Table of contents
-- [Overview](#overview)
-  - [The project](#the-project)
-  - [Screenshot](#screenshot)
-  - [Links](#links)
-- [My process](#my-process)
-    - [Built with](#built-with)
-    - [What I learned](#what-i-learned)
-    - [Continued development](#continued-development)
-    - [Useful resources](#useful-resources)
-- [Author](#author)
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Jeet's Personal Portfolio Website</title>
+</head>
 
-## Overview
-### The project
-- This is a personal portfolio website that I made using HTML, CSS and Tailwind CSS. I made this website to showcase my skills and projects that I have worked on. I also wanted to learn Tailwind CSS and this project helped me to learn it. I also used some JavaScript to make the website more interactive.
-
-### Screenshot
-![screenshot](./images/screenshot.png)
-
-### Links
-- Live Site URL: [Live Site](https://jeet-portfolio.netlify.app/)
-- GitHub Repo URL: [GitHub Repo](https://github.com/JeetMajumdar2003/JeetMajumdar2003.github.io)
-
-## My process
-### Built with
-- Semantic HTML5 markup
-- CSS custom properties
-- Flexbox
-- CSS Grid
-- Mobile-first workflow
-- Tailwind CSS
-- JavaScript
-
-### What I learned
-- I learned how to use Tailwind CSS and how to make a responsive website using Tailwind CSS. I also learned how to use JavaScript to make the website more interactive.
-- I learned how to use Tailwind CSS to make a responsive navbar.
-- I learned how to use Tailwind CSS to make a responsive grid layout.
-- I learned how to use Tailwind CSS to make a responsive card layout.
-- I learned how to use Tailwind CSS to make a responsive footer.
-
-```html
-<!-- Navber goes here -->
+<body class="bg-white">
+    <header>
+        <!-- Navber goes here -->
         <nav class="w-full h-20 bg-white flex justify-between px-4 items-center md:px-4 fixed">
             <div class="cursor-pointer hover:text-sky-500 flex flex-wrap flex-row items-center text-center">
                 <div class="w-12">
@@ -206,12 +174,6 @@
                                     Study</a>
                             </div>
                         </div>
-
-
-
-
-
-
                     </div>
                 </div>
     </section>
@@ -303,8 +265,7 @@
         </div>
     </footer>
     <!-- Footer section ends here -->
-```
-=======
-# JeetMajumdar2003.github.io
-# Jeet's personal portfolio using HTML CSS and Tailwind CSS.
->>>>>>> fcd5863546cedc395bcee35ba8e3ebb0cd0b84f2
+
+</body>
+
+</html>
