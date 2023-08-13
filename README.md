@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Jeet's personal portfolio using HTML CSS and Tailwind CSS.
 <!-- add my website into github pages -->
 
@@ -303,3 +304,7 @@
     </footer>
     <!-- Footer section ends here -->
 ```
+=======
+# JeetMajumdar2003.github.io
+# Jeet's personal portfolio using HTML CSS and Tailwind CSS.
+>>>>>>> fcd5863546cedc395bcee35ba8e3ebb0cd0b84f2
