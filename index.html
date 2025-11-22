@@ -4,9 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jeet's Protfolio</title>
+    <title>Jeet's Portfolio</title>
+    <link rel="icon" href="assets/logo.png" type="image/png">
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/f9e2495ded.js" crossorigin="anonymous"></script>
+    <!-- Spline Viewer Script -->
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.0/build/spline-viewer.js"></script>
     <script type="text/javascript">
         (function(c,l,a,r,i,t,y){
             c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -22,196 +25,256 @@
         <nav>
             <div class="navber">
                 <div class="logo">
-                    <img src="Images\logo.jpg" alt="" id="logo">
-                    <span>JEET MAJUMDAR</span>
+                    <img src="assets/logo.png" alt="Jeet Majumdar" class="logo-img">
                 </div>
                 <!-- Navigation -->
                 <div id="nav">
                     <ul id="sidemenu">
-                        <li><a href="#header">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#portfolio">Portfolio</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                        <i class="fas fa-times" onclick="closemenu()"></i>
+                        <li><a href="#header">// home</a></li>
+                        <li><a href="#about">// about</a></li>
+                        <li><a href="#arsenal">// stack</a></li>
+                        <li><a href="#portfolio">// projects</a></li>
+                        <li class="contact-btn-li"><a href="#contact" class="contact-btn">[ &lt;Contact /&gt; ]</a></li>
+                        <li class="theme-switch-li"><button id="theme-toggle" aria-label="Toggle theme"><i class="fas fa-moon"></i></button></li>
+                        <li class="menu-close"><i class="fas fa-times" onclick="closemenu()"></i></li>
                     </ul>
                     <i class="fas fa-bars" onclick="openmenu()"></i>
                 </div>
-                <!-- Navigation End -->
             </div>
         </nav>
+        
         <!-- Home -->
-        <div class="home">
-            <div class="header-text">
-                <h1>Hi, I'm <span>Jeet</span> Majumdar from <span>INDIA</span></h1>
-                <p> Frontend Web Developer || Web Design || Data Science Enthusiast || AI & ML</p>
-                <button><a href="#about">About Me</a></button>
+        <div class="home container">
+            <div class="row">
+                <div class="home-col-1">
+                    <div class="header-text">
+                        <h1>Architecting the Web.<br>Engineering Intelligence.</h1>
+                        <p>Full-Stack Developer & ML Engineer building scalable applications with data-driven insights.</p>
+                        <div class="hero-btns">
+                            <a href="#portfolio" class="btn-neon">[ View Projects ]</a>
+                            <a href="assets/Resume.pdf" target="_blank" class="btn-neon-purple">[ Read My Resume ]</a>
+                        </div>
+                        
+                        <div class="terminal-block">
+                            <div class="terminal-header">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <div class="terminal-body">
+                                <p>> initializing nextjs_app... <span class="green">done.</span></p>
+                                <p>> loading pytorch_model.pt... <span class="green">done.</span></p>
+                                <p>> <span id="typing-text"></span><span class="cursor">|</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="home-col-2">
+                    <div class="network-graphic">
+                        <!-- CSS/SVG Graphic placeholder -->
+                        <div class="network-nodes"></div>
+                        <!-- <img src="assets/logo.png" class="center-logo" alt="Logo"> -->
+                    </div>
+                </div>
             </div>
-            <!-- <div class="header-image">
-                <img src="Images\logo.jpg" alt="">
-            </div> -->
         </div>
-        <!-- Home End -->
     </div>
-    <!-- Header Section End -->
 
     <!-- About Section -->
     <div id="about">
-        <h1>About Me</h1>
         <div class="container">
+            <div class="section-title">
+                <h2>01. About Me</h2>
+            </div>
             <div class="row">
                 <div class="about-col-1">
-                    <img src="Images/logo.jpg" alt="">
+                    <p>I'm Jeet Majumdar, a passionate Full-Stack Developer and Machine Learning Engineer. I specialize in crafting dynamic web applications and intelligent systems that solve real-world problems. With a strong foundation in both front-end and back-end technologies, I thrive on creating seamless user experiences powered by robust data-driven insights.</p>
+                    
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('education')">Education</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="education">
+                        <ul>
+                            <li><span>2022 - Present</span><br>Bachelor of Engineering<br>Jadavpur University</li>
+                            <li><span>2019 - 2021</span><br>Higher Secondary (Science)<br>D.K.C.R.V</li>
+                            <li><span>2019</span><br>Secondary Education<br>K.K.C.H.S</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>2023 - Present</span><br>Full Stack Developer<br>Freelance / Self-Employed</li>
+                            <li><span>June 2025 - July 2025</span><br>Data Science Intern<br>Edunet Foundation X IBM</li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="about-col-2">
-                    <p>Hey! It's <span>Jeet Majumdar</span> and I'm a <span>Frontend Web Developer</span> located in Kolkata. I've done remote
-                        projects for agencies, consulted for startups, and collaborated with talented people to create
-                        digital products for both business and consumer use.
-                        <br>
-                        I'm a bit of a digital product junky. Over the years, I've used hundreds of web and mobile apps
-                        in different industries and verticals. Feel free to contact me here.</p>
-                    <div class="tab-titles">
-                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
-                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
-                        <p class="tab-links" onclick="opentab('education')">Education</p>
-                    </div>
-                    <div class="tab-contants active-tab" id="skills">
-                        <ul>
-                            <li><span>Web Development</span><br>Designing Websites, Web App Development, PWA etc.</li>
-                            <li><span>App Development</span><br>Building Android/iOS Apps</li>
-                        </ul>
-                    </div>
-                    <div class="tab-contants" id="experience">
-                        <ul>
-                            <li><span>2023-Present</span><br>IBM Cloud/AI Intern</li>
-                            <li><span>2023</span><br>IBM AI Intern</li>
-                        </ul>
-                    </div>
-                    <div class="tab-contants" id="education">
-                        <ul>
-                            <li><span>2022-Present</span><br>BE in Chemical Engineerong from JU</li>
-                            <li><span>2019-2021</span><br>12th from DKCRV</li>
-                        </ul>
-                    </div>
-                    <button><a href="#contact">Contact Me</a></button>
+                    <img src="assets/logo.png" class="about-img" alt="Jeet Majumdar">
                 </div>
             </div>
         </div>
     </div>
-    <!-- About Section End -->
 
-    <!-- Services Section -->
-    <div id="services">
-        <h1>My Services</h1>
+    <!-- My Arsenal (Skills) -->
+    <div id="arsenal">
         <div class="container">
-            <div class="services-list">
-                <div class="services-col">
-                    <img src="Images\service1.jpg" alt="">
-                    <h3>Web Development</h3>
-                    <p>Web Development is the work involved in developing a Web site for the Internet or an intranet.
-                        Web development can range from developing a simple single static page of plain text to complex
-                        Web-based Internet applications, electronic businesses, and social network services.</p>
-                    <a href="#">Learn More</a>
+            <div class="section-title">
+                <h2>02. My Arsenal</h2>
+            </div>
+            <div class="arsenal-grid">
+                <div class="arsenal-container container-a">
+                    <h3>Web Engineering</h3>
+                    <div class="skill-tags">
+                        <span>React</span> <span>Next.js</span> <span>Node.js</span> <span>Express.js</span>
+                        <span>HTML5</span> <span>CSS3</span> <span>JavaScript</span> <span>TypeScript</span>
+                        <span>Tailwind CSS</span> <span>MongoDB</span> <span>RedisDB</span> <span>SQL</span>
+                    </div>
                 </div>
-                <div class="services-col">
-                    <img src="Images\service2.jpg" alt="">
-                    <h3>App Development</h3>
-                    <p>Mobile app development is the act or process by which a mobile app is developed for mobile
-                        devices, such as personal digital assistants, enterprise digital assistants or mobile phones.
-                        These applications can be pre-installed on phones during manufacturing platforms, or delivered
-                        as web applications using server-side or client-side processing to provide an "application-like"
-                        experience within a Web browser.</p>
-                    <a href="#">Learn More</a>
+                <div class="arsenal-container container-b">
+                    <h3>Machine Learning & Data</h3>
+                    <div class="skill-tags">
+                        <span>Python</span> <span>PyTorch</span> <span>TensorFlow</span>
+                        <span>Pandas</span> <span>NumPy</span> <span>Scikit-learn</span>
+                        <span>OpenCV</span> <span>NLP</span> <span>Data Viz</span> 
+                        <span>SQL</span> <span>Streamlit</span>
+                    </div>
                 </div>
-                <div class="services-col">
-                    <img src="Images\service3.jpg" alt="">
-                    <h3>AI & ML</h3>
-                    <p>Artificial intelligence (AI) is intelligence demonstrated by machines, unlike the natural
-                        intelligence displayed by humans and animals, which involves consciousness and emotionality. The
-                        distinction between the former and the latter categories is often revealed by the acronym
-                        chosen.</p>
-                    <a href="#">Learn More</a>
+                <div class="arsenal-container container-c">
+                    <h3>Tools & Technologies</h3>
+                    <div class="skill-tags">
+                        <span>Git</span> <span>GitHub</span> <span>Docker</span> <span>Linux</span>
+                        <span>Azure</span> <span>DVC</span> <span>Appwrite</span> <span>Figma</span>
+                        <span>VS Code</span> <span>Jupyter</span> <span>Postman</span> <span>Excel</span>
+                        <span>Power BI</span>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Services Section End -->
 
-    <!-- Portfolio Section -->
+    <!-- Selected Works (Portfolio) -->
     <div id="portfolio">
-        <h1>Portfolio Projects</h1>
         <div class="container">
+            <div class="section-title">
+                <h2>03. Selected Works</h2>
+            </div>
+            
+            <div class="portfolio-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="web">Web Dev</button>
+                <button class="filter-btn" data-filter="ml">AI/ML</button>
+            </div>
+
             <div class="work-list">
-                <div class="work">
-                    <img src="Images\work-1.png" alt="">
-                    <div class="layer">
-                        <h3>Project 1</h3>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste, omnis.</p>
-                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                <div class="work" data-category="web">
+                    <div class="work-img">
+                        <img src="assets/work-1.png" alt="NextMusic Project">
+                    </div>
+                    <div class="work-info">
+                        <h3>NextMusic</h3>
+                        <div class="work-tags">
+                            <span>Next.js</span> <span>Node.js</span> <span>Aceternity-UI</span>
+                        </div>
+                        <p>NextMusic - Master the art of music with this Next.js-based landing site and UI kit.</p>
+                        <div class="work-links">
+                            <a href="https://github.com/JeetMajumdar2003/nextjs-music-app" rel="noopener noreferrer" target="_blank"><i class="fab fa-github"></i> Code</a>
+                            <a href="https://jeetmajumdar2003.github.io/nextjs-music-app/" rel="noopener noreferrer" target="_blank" ><i class="fas fa-external-link-alt"></i> Live</a>
+                        </div>
                     </div>
                 </div>
-                <div class="work">
-                    <img src="Images\work-2.png" alt="">
-                    <div class="layer">
-                        <h3>Project 2</h3>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste, omnis.</p>
-                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                <div class="work" data-category="ml">
+                    <div class="work-img">
+                        <img src="assets/work-2.png" alt="CNN-Disease Predictor Project">
+                    </div>
+                    <div class="work-info">
+                        <h3>CNN-Disease Predictor</h3>
+                        <div class="work-tags">
+                            <span>Python</span> <span>TensorFlow</span> <span>Flask</span>
+                        </div>
+                        <p>CNN-Disease Predictor uses AI to diagnose chicken diseases based on image data.</p>
+                        <div class="work-links">
+                            <a href="https://github.com/JeetMajumdar2003/Chicken-Disease-Classification" rel="noopener noreferrer" target="_blank"><i class="fab fa-github"></i> Code</a>
+                            <!-- <a href="https://github.com/JeetMajumdar2003/Chicken-Disease-Classification" rel="noopener noreferrer" target="_blank"><i class="fas fa-external-link-alt"></i> Live</a> -->
+                        </div>
                     </div>
                 </div>
-                <div class="work">
-                    <img src="Images\work-3.png" alt="">
-                    <div class="layer">
-                        <h3>Project 3</h3>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste, omnis.</p>
-                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                <div class="work" data-category="web">
+                    <div class="work-img">
+                        <img src="assets/work-3.png" alt="RealChat Project">
+                    </div>
+                    <div class="work-info">
+                        <h3>RealChat</h3>
+                        <div class="work-tags">
+                            <span>React</span> <span>Appwrite</span> <span>Node.js</span>
+                        </div>
+                        <p>RealChat connects users in a seamless, secure real-time chat application.</p>
+                        <div class="work-links">
+                            <a href="https://github.com/JeetMajumdar2003/Realtime-Chat" rel="noopener noreferrer" target="_blank"><i class="fab fa-github"></i> Code</a>
+                            <!-- <a href="#" rel="noopener noreferrer" target="_blank"><i class="fas fa-external-link-alt"></i> Live</a> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="work" data-category="ml">
+                    <div class="work-img">
+                        <img src="assets/work-4.png" alt="RealChat Project">
+                    </div>
+                    <div class="work-info">
+                        <h3>Know Your Salary</h3>
+                        <div class="work-tags">
+                            <span>Python</span> <span>Scikit-learn</span> <span>Streamlit</span>
+                        </div>
+                        <p>Salary prediction model using machine learning techniques.</p>
+                        <div class="work-links">
+                            <a href="https://github.com/JeetMajumdar2003/Employee-Salary-Prediction" rel="noopener noreferrer" target="_blank"><i class="fab fa-github"></i> Code</a>
+                        </div>
                     </div>
                 </div>
             </div>
-            <a href="#"class="btn">See more</a>
         </div>
     </div>
-    <!-- Portfolio Section End -->
 
     <!-- Contact Section -->
     <div id="contact">
-        <h1>Contact Me</h1>
         <div class="container">
-            <div class="row">
-                <div class="contact-left">
-                    <p><i class="fas fa-paper-plane"></i> contact@microsoft.com</p>
-                    <p><i class="fas fa-phone-square"></i> 0123456789</p>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
-                    <a href="Images\my-cv.pdf" download class="btn btn2">Download CV</a>
+            <div class="section-title">
+                <h2>04. Initialize Communication</h2>
+            </div>
+            <div class="contact-terminal">
+                <div class="terminal-header">
+                    <span>Terminal</span>
                 </div>
-                <div class="contact-right">
-                    <form class="contact-form" action="">
-                        <input type="text" name="Name" placeholder="Your Name" class="box" required>
-                        <input type="email" name="Email" placeholder="Your Email" class="box" required>
-                        <input type="text" name="Subject" placeholder="Your Subject" class="box">
-                        <textarea name="Message" id="" rows="6" placeholder="Message" class="box"></textarea>
-                        <button id="sendbtn" type="submit" class="btn btn2">Send</button>
+                <div class="terminal-content">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label>> Enter name:</label>
+                            <input type="text" name="Name" placeholder="_" required>
+                        </div>
+                        <div class="form-group">
+                            <label>> Enter email:</label>
+                            <input type="email" name="Email" placeholder="_" required>
+                        </div>
+                        <div class="form-group">
+                            <label>> Message payload:</label>
+                            <textarea name="Message" rows="4" placeholder="_" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-neon">[ EXECUTE SEND ]</button>
                     </form>
                     <span id="msg"></span>
+                </div>
+                <div class="social-icons">
+                    <a href="https://github.com/JeetMajumdar2003" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/jeet-majumdar648/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://x.com/jeet_exist" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="mailto:officialjeetmajumdar2003@outlook.com" target="_blank" rel="noopener noreferrer" aria-label="Email"><i class="fas fa-envelope"></i></a>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Contact Section End -->
-
-    <!-- Footer Section -->
-    <div id="footer">
-        <p>Copyright &copy; 2024 Jeet Majumdar | Made with <i class="fas fa-heart"></i> by Jeet Majumdar</p>
+    
+    <div class="copyright">
+        <p>Copyright © 2025 Jeet. Made with <i class="fas fa-heart"></i> by Jeet Majumdar</p>
     </div>
-    <!-- Footer Section End -->
 
+    <script src="script.js"></script>
 </body>
-<script src="script.js"></script>
-
-
 </html>
