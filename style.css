@@ -1481,7 +1481,7 @@ nav .fa-times {
     }
 
     .nav-pill ul#sidemenu.open {
-        display: flex !important;
+        display: flex;
         max-height: 500px;
         padding: 15px 0;
         opacity: 1;
