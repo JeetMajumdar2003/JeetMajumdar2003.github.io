@@ -8,8 +8,6 @@
     <link rel="icon" href="assets/logo.png" type="image/png">
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/f9e2495ded.js" crossorigin="anonymous"></script>
-    <!-- Spline Viewer Script -->
-    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.0/build/spline-viewer.js"></script>
     <script type="text/javascript">
         (function(c,l,a,r,i,t,y){
             c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -17,29 +15,45 @@
             y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
         })(window, document, "clarity", "script", "noqqwhjx9l");
     </script>
+    <!-- Spline Viewer Script -->
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.0/build/spline-viewer.js"></script>
 </head>
 
 <body>
     <!-- Header Section -->
     <div id="header">
         <nav>
-            <div class="navber">
-                <div class="logo">
-                    <img src="assets/logo.png" alt="Jeet Majumdar" class="logo-img">
-                </div>
-                <!-- Navigation -->
-                <div id="nav">
+            <div class="nav-wrapper">
+                <div class="nav-pill">
+                    <a href="#header" class="nav-logo">
+                        <img src="assets/logo.png" alt="Jeet" class="nav-logo-img">
+                    </a>
                     <ul id="sidemenu">
-                        <li><a href="#header">// home</a></li>
-                        <li><a href="#about">// about</a></li>
-                        <li><a href="#arsenal">// stack</a></li>
-                        <li><a href="#portfolio">// projects</a></li>
-                        <li class="contact-btn-li"><a href="#contact" class="contact-btn">[ &lt;Contact /&gt; ]</a></li>
-                        <li class="theme-switch-li"><button id="theme-toggle" aria-label="Toggle theme"><i class="fas fa-moon"></i></button></li>
+                        <li class="mobile-logo">
+                            <img src="assets/logo.png" alt="Jeet" class="sidebar-logo-img">
+                            <span>Jeet Majumdar</span>
+                        </li>
+                        <li><a href="#header" class="nav-link active">Home</a></li>
+                        <li><a href="#about" class="nav-link">About</a></li>
+                        <li><a href="#arsenal" class="nav-link">Skills</a></li>
+                        <li><a href="#portfolio" class="nav-link">Projects</a></li>
+                        <li><a href="#contact" class="nav-link">Contact</a></li>
+                        <li class="mobile-theme-toggle">
+                            <button id="mobile-theme-btn" class="mobile-theme-btn" aria-label="Toggle theme">
+                                <i class="fas fa-moon"></i>
+                                <span>Dark Mode</span>
+                            </button>
+                        </li>
                         <li class="menu-close"><i class="fas fa-times" onclick="closemenu()"></i></li>
                     </ul>
-                    <i class="fas fa-bars" onclick="openmenu()"></i>
+                    <i class="fas fa-bars" onclick="togglemenu()"></i>
                 </div>
+            </div>
+            <!-- Floating action buttons -->
+            <div class="nav-actions">
+                <button id="theme-toggle" class="action-btn" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button>
             </div>
         </nav>
         
@@ -55,27 +69,70 @@
                             <a href="assets/Resume.pdf" target="_blank" class="btn-neon-purple">[ Read My Resume ]</a>
                         </div>
                         
-                        <div class="terminal-block">
-                            <div class="terminal-header">
-                                <span class="dot red"></span>
-                                <span class="dot yellow"></span>
-                                <span class="dot green"></span>
-                            </div>
-                            <div class="terminal-body">
-                                <p>> initializing nextjs_app... <span class="green">done.</span></p>
-                                <p>> loading pytorch_model.pt... <span class="green">done.</span></p>
-                                <p>> <span id="typing-text"></span><span class="cursor">|</span></p>
-                            </div>
-                        </div>
                     </div>
                 </div>
                 <div class="home-col-2">
-                    <div class="hero-img-container">
-                        <!-- <div class="network-graphic-bg">
-                            <div class="network-nodes"></div>
-                        </div> -->
-                        <img src="assets/logo.png" class="hero-img" alt="Jeet Majumdar">
+                    <div class="hero-3d-container">
+                        <!-- Lottie Animation (Developer/Coding theme) -->
+                        <script src="https://unpkg.com/@lottiefiles/lottie-player@2.0.8/dist/lottie-player.js"></script>
+                        <lottie-player 
+                            class="hero-lottie"
+                            src="https://assets2.lottiefiles.com/packages/lf20_w51pcehl.json"
+                            background="transparent" 
+                            speed="1" 
+                            loop 
+                            autoplay>
+                        </lottie-player>
+                        <!-- Code symbols floating -->
+                        <div class="code-symbols">
+                            <span class="symbol">&lt;/&gt;</span>
+                            <span class="symbol">{}</span>
+                            <span class="symbol">( )</span>
+                            <span class="symbol">[]</span>
+                            <span class="symbol">//</span>
+                            <span class="symbol">λ</span>
+                        </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Portfolio Terminal Section -->
+    <div id="terminal-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>00. Interactive Terminal</h2>
+            </div>
+            <div class="terminal-wrapper">
+                <div class="terminal-block enhanced">
+                    <div class="terminal-header">
+                        <div class="terminal-dots">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <span class="terminal-title">jeet@portfolio:~</span>
+                        <div class="terminal-actions">
+                            <i class="fas fa-minus"></i>
+                            <i class="fas fa-square"></i>
+                            <i class="fas fa-times"></i>
+                        </div>
+                    </div>
+                    <div class="terminal-body" id="terminal-body">
+                        <div class="terminal-output" id="terminal-output">
+                            <div class="terminal-welcome">
+                                <p class="output-info">Welcome to Terminal Portfolio </p>
+                                <p class="output-dim">Type <span class="output-success">help</span> to see available commands</p>
+                                <p class="output-dim">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</p>
+                            </div>
+                        </div>
+                        <div class="terminal-input-wrapper">
+                            <span class="prompt">$</span>
+                            <input type="text" class="terminal-input" id="terminal-input" placeholder="Type a command..." autocomplete="off">
+                        </div>
+                    </div>
+                    <div class="terminal-glow"></div>
                 </div>
             </div>
         </div>
@@ -212,7 +269,7 @@
                         <p>RealChat connects users in a seamless, secure real-time chat application.</p>
                         <div class="work-links">
                             <a href="https://github.com/JeetMajumdar2003/Realtime-Chat" rel="noopener noreferrer" target="_blank"><i class="fab fa-github"></i> Code</a>
-                            <!-- <a href="#" rel="noopener noreferrer" target="_blank"><i class="fas fa-external-link-alt"></i> Live</a> -->
+                            <a href="https://realtime-chat.appwrite.network/" rel="noopener noreferrer" target="_blank"><i class="fas fa-external-link-alt"></i> Live</a>
                         </div>
                     </div>
                 </div>
@@ -244,6 +301,21 @@
                         <p>Power BI analytics dashboard built from The College Quest dataset in Fabricland Competition.</p>
                         <div class="work-links">
                             <a href="https://github.com/JeetMajumdar2003/Fabricland_College_Quest_Report" rel="noopener noreferrer" target="_blank"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="work" data-category="data">
+                    <div class="work-img">
+                        <img src="assets/work-6.png" alt="Vendor Performance Analysis Project">
+                    </div>
+                    <div class="work-info">
+                        <h3>Vendor Performance Analysis</h3>
+                        <div class="work-tags">
+                            <span>Python</span> <span>SQL</span> <span>Power BI</span>
+                        </div>
+                        <p>Analyzed vendor performance data to optimize procurement strategies and improve supplier relationships.</p>
+                        <div class="work-links">
+                            <a href="https://github.com/JeetMajumdar2003/Vendor-Performance-Analysis" rel="noopener noreferrer" target="_blank"><i class="fab fa-github"></i> Code</a>
                         </div>
                     </div>
                 </div>
