@@ -478,3 +478,5 @@ function opentab(tabname){
     document.getElementById(tabname).classList.add("active-tab");
 }
 
+// Footer Year Update
+document.getElementById("year").textContent = new Date().getFullYear();
